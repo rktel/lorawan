@@ -7,10 +7,10 @@ server.on('error', (err) => {
     server.close();
 });
 
-server.on('message', (msg, rinfo) => {
+server.on('message', Meteor.bindEnvironment((msg, rinfo) => {
     console.log(`server got: ${msg} from ${rinfo.address}:${rinfo.port}`);
     Meteor.call('insertData', msg.toString())
-});
+}));
 
 server.on('listening', () => {
     const address = server.address();
