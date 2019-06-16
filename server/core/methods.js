@@ -12,7 +12,7 @@ Meteor.methods({
 
 
 
-        geocoder.reverse({ lat: latitude, lon: longitude }, Meteor.bindEnvironment((err, res) => {
+        geocoder.reverse({ lat: latitud, lon: longitud }, Meteor.bindEnvironment((err, res) => {
             const place = res ? res[0].formattedAddress : '...'
 
             data = {
