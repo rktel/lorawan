@@ -1,6 +1,6 @@
 import Geocoder from 'node-geocoder'
 const geocoder = Geocoder({ provider: 'openstreetmap', formatter: 'json' })
-import { Data } from '../../imports/collections'
+import { Data } from '../../imports/api/collections'
 
 Meteor.methods({
     insertData(data) {
