@@ -1,3 +1,5 @@
+import Geocoder from 'node-geocoder'
+const geocoder = Geocoder({ provider: 'openstreetmap', formatter: 'json' })
 import { Data } from '../../imports/collections'
 
 Meteor.methods({
@@ -7,9 +9,18 @@ Meteor.methods({
         const latitud = dataArray[1];
         const longitud = dataArray[2];
         const datetime = dataArray[3];
-        data = {
-            deviceID, latitud,longitud,datetime
-        }
-        Data.insert( data )
+
+
+
+        geocoder.reverse({ lat: latitude, lon: longitude }, Meteor.bindEnvironment((err, res) => {
+            const place = res ? res[0].formattedAddress : '...'
+
+            data = {
+                deviceID, latitud, longitud, datetime, place
+            }
+            Data.insert(data)
+        }))
+
+
     }
 });
