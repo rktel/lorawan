@@ -14,7 +14,7 @@ import App from '../imports/ui/App.vue';
 Vue.config.productionTip = false
 
 // Vue-Leaflet
-//import { Icon }  from 'leaflet'
+import { Icon }  from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 
