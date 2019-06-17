@@ -13,7 +13,9 @@
       @update:center="centerUpdated"
       @update:bounds="boundsUpdated"
     >
-      <LTileLayer :url="url"></LTileLayer>
+      <LTileLayer :url="url">
+          <l-marker :lat-lng="markerLatLng" ></l-marker>
+      </LTileLayer>
     </LMap>
   </div>
 </template>
@@ -31,7 +33,8 @@ export default {
       url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       zoom: 3,
       center: [47.413220, -1.219482],
-      bounds: null
+      bounds: null,
+      markerLatLng: [47.313220, -1.319482]
     };
   },
   methods: {
