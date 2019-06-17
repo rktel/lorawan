@@ -14,40 +14,41 @@
       @update:bounds="boundsUpdated"
     >
       <LTileLayer :url="url">
-          <l-marker :lat-lng="markerLatLng" ></l-marker>
+        <LCircleMarker :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"/>
       </LTileLayer>
     </LMap>
   </div>
 </template>
 
 <script>
-
-
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
-
+import { LMap, LTileLayer, LCircleMarker } from "vue2-leaflet";
 
 export default {
-    components:{ LMap, LTileLayer, LMarker },
-  data () {
+  components: { LMap, LTileLayer, LCircleMarker },
+  data() {
     return {
-      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 3,
-      center: [47.413220, -1.219482],
+      center: [47.41322, -1.219482],
       bounds: null,
-      markerLatLng: [47.313220, -1.319482]
+      circle: {
+        center: [47.41322, -1.0482],
+        radius: 6,
+        color: "red"
+      }
     };
   },
   methods: {
-    zoomUpdated (zoom) {
+    zoomUpdated(zoom) {
       this.zoom = zoom;
     },
-    centerUpdated (center) {
+    centerUpdated(center) {
       this.center = center;
     },
-    boundsUpdated (bounds) {
+    boundsUpdated(bounds) {
       this.bounds = bounds;
     }
   }
-}
+};
 </script>
 
