@@ -14,12 +14,12 @@ import App from '../imports/ui/App.vue';
 Vue.config.productionTip = false
 
 // Vue-Leaflet
-import { Icon }  from 'leaflet'
+//import { Icon }  from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
 
 // this part resolve an issue where the markers would not appear
-delete Icon.Default.prototype._getIconUrl;
+//delete Icon.Default.prototype._getIconUrl;
 
 /*
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
