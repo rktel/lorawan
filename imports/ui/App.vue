@@ -14,17 +14,17 @@
       @update:bounds="boundsUpdated"
     >
       <LTileLayer :url="url">
-        <LCircleMarker :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"/>
+        <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"/>
       </LTileLayer>
     </LMap>
   </div>
 </template>
 
 <script>
-import { LMap, LTileLayer, LCircleMarker } from "vue2-leaflet";
+import { LMap, LTileLayer, LCircle } from "vue2-leaflet";
 
 export default {
-  components: { LMap, LTileLayer, LCircleMarker },
+  components: { LMap, LTileLayer, LCircle },
   data() {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
