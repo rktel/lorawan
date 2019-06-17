@@ -21,13 +21,17 @@ import 'leaflet/dist/leaflet.css'
 // this part resolve an issue where the markers would not appear
 delete Icon.Default.prototype._getIconUrl;
 
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
+import iconUrl from 'leaflet/dist/images/marker-icon.png'
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
+
+
 Icon.Default.mergeOptions({
-  iconRetinaUrl: import('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: import('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: import('leaflet/dist/images/marker-shadow.png')
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl
 });
 
-import L from 'leaflet';
 
 Meteor.startup(() => {
   new Vue({
