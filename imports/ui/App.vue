@@ -1,10 +1,14 @@
 <template>
-    <h1>App</h1>
+    <LMap></LMap>
 </template>
 
 <script>
-export default {
+import {LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 
+export default {
+    components:{
+        LMap, LTileLayer, LMarker
+    }
 }
 </script>
 
