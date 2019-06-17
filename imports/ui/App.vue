@@ -14,7 +14,7 @@
       @update:bounds="boundsUpdated"
     >
       <LTileLayer :url="url">
-        <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"/>
+        <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircle>
       </LTileLayer>
     </LMap>
   </div>
