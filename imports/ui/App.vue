@@ -13,28 +13,25 @@
       @update:center="centerUpdated"
       @update:bounds="boundsUpdated"
     >
-      <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircle>
+      <LMarker :lat-lng="markCenter"></LMarker>
       <LTileLayer :url="url"></LTileLayer>
     </LMap>
   </div>
 </template>
 
 <script>
-import { LMap, LTileLayer, LCircle } from "vue2-leaflet";
+import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 
 export default {
-  components: { LMap, LTileLayer, LCircle },
+  components: { LMap, LTileLayer, LMarker },
   data() {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 3,
       center: [-9.096715, -76.583411],
       bounds: null,
-      circle: {
-        center: [-9.096715, -76.583411],
-        radius: 6,
-        color: "red"
-      }
+      markCenter: [-9.096715, -76.583411]
+ 
     };
   },
   methods: {
