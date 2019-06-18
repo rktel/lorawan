@@ -28,10 +28,10 @@ export default {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 3,
-      center: [47.41322, -1.219482],
+      center: [-9.096715, -76.583411],
       bounds: null,
       circle: {
-        center: [47.41322, -1.0482],
+        center: [-9.096715, -76.583411],
         radius: 6,
         color: "red"
       }
