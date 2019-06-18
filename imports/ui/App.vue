@@ -13,9 +13,8 @@
       @update:center="centerUpdated"
       @update:bounds="boundsUpdated"
     >
-      <LTileLayer :url="url">
-        <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircle>
-      </LTileLayer>
+      <LCircle :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircle>
+      <LTileLayer :url="url"></LTileLayer>
     </LMap>
   </div>
 </template>
@@ -51,4 +50,3 @@ export default {
   }
 };
 </script>
-
