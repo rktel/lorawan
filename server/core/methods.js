@@ -9,18 +9,16 @@ Meteor.methods({
         const latitud = dataArray[1];
         const longitud = dataArray[2];
         const datetime = dataArray[3];
-
-
-
         geocoder.reverse({ lat: latitud, lon: longitud }, Meteor.bindEnvironment((err, res) => {
             const place = res ? res[0].formattedAddress : '...'
-
             data = {
                 deviceID, latitud, longitud, datetime, place
             }
             Data.insert(data)
         }))
-
-
+    },
+    async getData(day) {
+        const data = await Data.find({ datetime: new RegExp(day) }).fetch()
+        return data
     }
 });

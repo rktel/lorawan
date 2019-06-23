@@ -69,6 +69,11 @@ export default {
   methods: {
     getData() {
       console.log(this.inputDate);
+      Meteor.call('getData', this.inputDate, (error, data) =>{ 
+        if (!error) { 
+          console.log('data: ', data); 
+        } 
+      });
     },
     zoomUpdated(zoom) {
       this.zoom = zoom;
