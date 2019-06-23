@@ -35,7 +35,11 @@
                       :lat-lng="[item.latitud, item.longitud]"
                       :radius="circle.radius"
                       :color="circle.color"
-                    ></LCircleMarker>
+                    >
+                    <LPopup>
+                      {{item.datetime}} -{{item.place}}
+                    </LPopup>
+                    </LCircleMarker>
                   </template>
                 </LMap>
               </div>
@@ -54,18 +58,20 @@ export default {
   components: {
     LMap,
     LTileLayer,
-    LCircleMarker
+    LCircleMarker,
+    LPopup
   },
   data() {
     return {
       data: [],
       inputDate: initDate(),
-      url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+      //url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+      url: "http://tile.memomaps.de/tilegen/${z}/${x}/${y}.png",
       zoom: 10,
-      center: [-9.096715, -76.583411],
+      center: [-12.156054, -76.976268],
       bounds: null,
       circle: {
-        center: [-9.096715, -76.583411],
+        center: [-12.156054, -76.976268],
         radius: 3,
         color: "blue"
       }
