@@ -54,7 +54,7 @@ export default {
   },
   data() {
     return {
-      inputDate:'',
+      inputDate: new Date().toISOString(),
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 10,
       center: [-9.096715, -76.583411],
