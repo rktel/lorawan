@@ -3,12 +3,15 @@
     <v-content>
         <v-container fill-height fluid>
             <v-layout row wrap>
-                <v-flex xs4>
-
+                <v-flex xs3>
+                  <v-layout column>
+                    <input type="date" v-model="inputDate">
+                    <v-btn color="success">Buscar</v-btn>
+                  </v-layout>
                 </v-flex>
-                <v-flex xs8>
+                <v-flex xs9>
                     <div style="height: 100%; width: 100%">
-                        <div class="info" style="height: 10%">
+                        <div class="grey" style="height: 10%">
                             <span>Center: {{ center }}</span>
                             <span>Zoom: {{ zoom }}</span>
                             <span>Bounds: {{ bounds }}</span>
