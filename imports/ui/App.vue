@@ -4,7 +4,7 @@
       <v-container fill-height fluid>
         <v-layout row wrap>
           <v-flex xs3>
-            <v-card>
+            <v-card style="height: 100%; width: 100%">
               <v-layout column>
                 <input type="date" v-model="inputDate">
                 <v-btn color="success">Buscar</v-btn>
@@ -12,7 +12,7 @@
             </v-card>
           </v-flex>
           <v-flex xs9>
-            <v-card>
+            <v-card style="height: 100%; width: 100%">
               <div style="height: 100%; width: 100%">
                 <div class="grey" style="height: 10%">
                   <span>Center: {{ center }}</span>
