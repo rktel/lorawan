@@ -80,7 +80,7 @@ export default {
   methods: {
     localTime(data) {
       let dt = new Date(data);
-      dt.setHours(dt.getHours() - 5);
+      dt.setHours(dt.getHours() - 10);
       return dt.toISOString();
     },
     getData() {
