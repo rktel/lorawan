@@ -36,7 +36,7 @@
                       :radius="circle.radius"
                       :color="circle.color"
                     >
-                      <LPopup>{{localTime(item.datetime)}} -{{item.place}}</LPopup>
+                      <LPopup>{{localTime(item.datetime)}} <br> {{item.place}}</LPopup>
                     </LCircleMarker>
                   </template>
                 </LMap>
