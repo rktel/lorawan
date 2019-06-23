@@ -27,12 +27,16 @@
                   @update:center="centerUpdated"
                   @update:bounds="boundsUpdated"
                 >
-                  <LCircleMarker
-                    :lat-lng="circle.center"
-                    :radius="circle.radius"
-                    :color="circle.color"
-                  ></LCircleMarker>
                   <LTileLayer :url="url"></LTileLayer>
+                  <template v-if="data.length>0">
+                    <LCircleMarker
+                      v-for="item in data"
+                      :key="item._id"
+                      :lat-lng="[item.latitud, item.longitud]"
+                      :radius="circle.radius"
+                      :color="circle.color"
+                    ></LCircleMarker>
+                  </template>
                 </LMap>
               </div>
             </v-card>
@@ -54,6 +58,7 @@ export default {
   },
   data() {
     return {
+      data: [],
       inputDate: initDate(),
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 10,
@@ -69,10 +74,11 @@ export default {
   methods: {
     getData() {
       console.log(this.inputDate);
-      Meteor.call('getData', this.inputDate, (error, data) =>{ 
-        if (!error) { 
-          console.log('data: ', data); 
-        } 
+      Meteor.call("getData", this.inputDate, (error, data) => {
+        if (!error) {
+          console.log("data: ", data);
+          this.data = data;
+        }
       });
     },
     zoomUpdated(zoom) {
