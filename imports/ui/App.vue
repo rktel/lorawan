@@ -1,5 +1,13 @@
 <template>
-  <div style="height: 100%; width: 100%">
+ <v-app>
+   <v-content>
+     <v-container>
+       <v-layout row wrap>
+         <v-flex xs4>
+           
+         </v-flex>
+         <v-flex xs8>
+ <div style="height: 100%; width: 100%">
     <div class="info" style="height: 15%">
       <span>Center: {{ center }}</span>
       <span>Zoom: {{ zoom }}</span>
@@ -16,7 +24,12 @@
       <LCircleMarker :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircleMarker>
       <LTileLayer :url="url"></LTileLayer>
     </LMap>
-  </div>
+  </div>           
+         </v-flex>
+       </v-layout>
+     </v-container>
+   </v-content>
+ </v-app>
 </template>
 
 <script>
@@ -27,12 +40,12 @@ export default {
   data() {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-      zoom: 13,
+      zoom: 10,
       center: [-9.096715, -76.583411],
       bounds: null,
       circle:{
         center:[-9.096715, -76.583411],
-        radius:2,
+        radius:3,
         color: 'blue'
       }
     };
