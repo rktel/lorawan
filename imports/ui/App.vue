@@ -8,12 +8,12 @@
                 </v-flex>
                 <v-flex xs8>
                     <div style="height: 100%; width: 100%">
-                        <div class="info" style="height: 15%">
+                        <div class="info" style="height: 10%">
                             <span>Center: {{ center }}</span>
                             <span>Zoom: {{ zoom }}</span>
                             <span>Bounds: {{ bounds }}</span>
                         </div>
-                        <LMap style="height: 80%; width: 100%" :zoom="zoom" :center="center" @update:zoom="zoomUpdated" @update:center="centerUpdated" @update:bounds="boundsUpdated">
+                        <LMap style="height: 90%; width: 100%" :zoom="zoom" :center="center" @update:zoom="zoomUpdated" @update:center="centerUpdated" @update:bounds="boundsUpdated">
                             <LCircleMarker :lat-lng="circle.center" :radius="circle.radius" :color="circle.color"></LCircleMarker>
                             <LTileLayer :url="url"></LTileLayer>
                         </LMap>
