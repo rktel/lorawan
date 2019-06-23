@@ -4,7 +4,7 @@
       <v-container fill-height fluid>
         <v-layout row wrap>
           <v-flex xs3>
-            <v-card style="height: 100%; width: 100%">
+            <v-card style="height: 100%; width: 100%" class="px-3">
               <v-layout column>
                 <input type="date" v-model="inputDate">
                 <v-btn color="success">Buscar</v-btn>
