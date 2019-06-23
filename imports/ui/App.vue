@@ -7,7 +7,7 @@
             <v-card style="height: 100%; width: 100%" class="px-3">
               <v-layout column>
                 <input type="date" v-model="inputDate">
-                <v-btn color="success">Buscar</v-btn>
+                <v-btn color="success" @click="getData">Buscar</v-btn>
               </v-layout>
             </v-card>
           </v-flex>
@@ -54,6 +54,7 @@ export default {
   },
   data() {
     return {
+      inputDate:'',
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 10,
       center: [-9.096715, -76.583411],
@@ -66,6 +67,9 @@ export default {
     };
   },
   methods: {
+    getData(){
+      console.log(this.inputDate);
+    },
     zoomUpdated(zoom) {
       this.zoom = zoom;
     },
