@@ -72,7 +72,7 @@ export default {
       bounds: null,
       circle: {
         center: [-12.156054, -76.976268],
-        radius: 3,
+        radius: 5,
         color: "blue"
       }
     };
