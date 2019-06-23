@@ -66,7 +66,7 @@ export default {
       data: [],
       inputDate: initDate(),
       //url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-      url: "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png",
+      url: "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
       zoom: 10,
       center: [-12.156054, -76.976268],
       bounds: null,
