@@ -54,7 +54,7 @@ export default {
   },
   data() {
     return {
-      inputDate: '2019-06-05',
+      inputDate: initDate(),
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 10,
       center: [-9.096715, -76.583411],
@@ -81,4 +81,10 @@ export default {
     }
   }
 };
+
+/* funciones de apoyo*/
+
+function initDate() {
+  return (new Date().toISOString()).split('T')[0]
+}
 </script>
