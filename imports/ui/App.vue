@@ -67,7 +67,7 @@ export default {
     };
   },
   methods: {
-    getData(){
+    getData() {
       console.log(this.inputDate);
     },
     zoomUpdated(zoom) {
@@ -85,6 +85,8 @@ export default {
 /* funciones de apoyo*/
 
 function initDate() {
-  return (new Date().toISOString()).split('T')[0]
+  let dt = new Date();
+  dt.setHours(dt.getHours() - 5);
+  return dt.toISOString().split("T")[0];
 }
 </script>
